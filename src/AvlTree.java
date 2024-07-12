@@ -39,6 +39,16 @@ public class AvlTree {
             node.right = insert(node.right, value);
         }
 
+        // setting the node height.
+        node.height = height(node);
+
+        if(isLeftHeavy(node)) {
+            System.out.println(node.value + " is left heavy a right rotation is required");
+        } 
+        else if (isRightHeavy(node)) {
+            System.out.println(node.value + " is right heavy, a left rotation is required");
+        }
+
         return node;
     }
 
@@ -52,5 +62,17 @@ public class AvlTree {
         }
 
         return Math.max(height(node.left), height(node.right)) + 1;
+    }
+
+    private int balanceFactor(AvlTreeNode node) {
+        return (height(node.left) - height(node.right));
+    }
+
+    private boolean isLeftHeavy(AvlTreeNode node) {
+        return balanceFactor(node) > 1;
+    }
+
+    private boolean isRightHeavy(AvlTreeNode node) {
+        return balanceFactor(node) < -1;
     }
 }
