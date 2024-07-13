@@ -12,14 +12,6 @@ public class BinarySearchTree {
             left = null;
             right = null;
         }
-
-        public BinarySearchTreeNode(int value, BinarySearchTreeNode leftChild, BinarySearchTreeNode rightChild) {
-            this.value = value;
-            left = leftChild;
-            right = rightChild;
-        }
-
-
     }
 
     private BinarySearchTreeNode root;
