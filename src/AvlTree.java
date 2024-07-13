@@ -42,9 +42,7 @@ public class AvlTree {
         // setting the node height.
         node.height = height(node);
 
-        root = balance(node);
-
-        return node;
+        return balance(node);
     }
 
     private AvlTreeNode balance(AvlTreeNode root) {
